@@ -15,10 +15,10 @@ public class bıngoMethods<T> {
 
     Node<T> head;
     int size = 0;
+      static  int[][] ArrayCard = new int[3][9];
 
     public int[][] generateCard() {
         Random random = new Random();
-        int[][] ArrayCard = new int[3][9];
 
         while (size < 27) {
             int number;

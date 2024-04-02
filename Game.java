@@ -5,7 +5,10 @@
 package com.mycompany.tombala;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.util.Random;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -21,18 +24,39 @@ public class Game<T> extends javax.swing.JFrame {
     public Game() {
         initComponents();
 
+        ImageIcon icon = new ImageIcon("C:\\Users\\sozcu\\Downloads\\bingo.png");
+
+        Image image = icon.getImage();
+        Image scaledImage = image.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+        jLabel59.setIcon(scaledIcon);
         labels = new JLabel[][]{{jLabel1, jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9}, {jLabel10, jLabel11, jLabel12, jLabel13, jLabel14, jLabel15, jLabel16, jLabel17, jLabel18}, {jLabel19, jLabel20, jLabel21, jLabel22, jLabel23, jLabel24, jLabel25, jLabel26, jLabel27}};
+
         labels2 = new JLabel[][]{{jLabel28, jLabel29, jLabel30, jLabel31, jLabel32, jLabel33, jLabel34, jLabel35, jLabel36}, {jLabel37, jLabel38, jLabel39, jLabel40, jLabel41, jLabel42, jLabel43, jLabel44, jLabel45}, {jLabel46, jLabel47, jLabel48, jLabel49, jLabel50, jLabel51, jLabel52, jLabel53, jLabel54}};
         generateforplayer1();
         generateforplayer2();
-        player1.card = generator.arrayToMultiLinkedList(card1);
-        player2.card = generator.arrayToMultiLinkedList(card2);
+        
+       
+        generator.arrayToMultiLinkedList(card1);
+        generator.arrayToMultiLinkedList(card2);
+        
+       
+        jLabel57.setText(Start.player2.name + " Status");
+        jLabel58.setText(Start.player1.name + " Status");
 
     }
+
+    ImageIcon block = new ImageIcon("C:\\Users\\sozcu\\Downloads\\new-moon.png");
+    Image blockImage = block.getImage();
+    Image scaledblock = blockImage.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
+
+    ImageIcon scaledblockedIcon = new ImageIcon(scaledblock);
+
     JLabel[][] labels;
     JLabel[][] labels2;
-    Player player1 = new Player();
-    Player player2 = new Player();
+
     static int[][] card1;
     static int[][] card2;
 
@@ -110,357 +134,378 @@ public class Game<T> extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(251, 243, 213));
+        jPanel3.setBackground(new java.awt.Color(255, 248, 232));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(239, 188, 155));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new java.awt.GridLayout(3, 9));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel1);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel2);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel3);
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel4);
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel5);
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel6);
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel7);
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel8);
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel9);
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel10);
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel11);
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel12);
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel13);
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel14);
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel15);
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel16);
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel17);
 
+        jLabel18.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel18);
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel19);
 
+        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel20);
 
+        jLabel21.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel21);
 
+        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel22);
 
+        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel23);
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel24);
 
+        jLabel25.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel25);
 
+        jLabel26.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel26);
 
+        jLabel27.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
         jLabel27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(jLabel27);
 
-        jPanel2.setBackground(new java.awt.Color(156, 175, 170));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 51, 293, 150));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new java.awt.GridLayout(3, 9));
 
+        jLabel28.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel28);
 
+        jLabel29.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel29);
 
+        jLabel30.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel30);
 
+        jLabel31.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel31);
 
+        jLabel32.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel32);
 
+        jLabel33.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel33);
 
+        jLabel34.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(0, 0, 0));
         jLabel34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel34);
 
+        jLabel35.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel35);
 
+        jLabel36.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 0));
         jLabel36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel36);
 
+        jLabel37.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 0));
         jLabel37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel37);
 
+        jLabel38.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(0, 0, 0));
         jLabel38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel38);
 
+        jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(0, 0, 0));
         jLabel39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel39);
 
+        jLabel40.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
         jLabel40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel40);
 
+        jLabel41.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel41);
 
+        jLabel42.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel42);
 
+        jLabel43.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(0, 0, 0));
         jLabel43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel43);
 
+        jLabel44.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(0, 0, 0));
         jLabel44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel44);
 
+        jLabel45.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 0));
         jLabel45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel45);
 
+        jLabel46.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 0, 0));
         jLabel46.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel46);
 
+        jLabel47.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(0, 0, 0));
         jLabel47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel47);
 
+        jLabel48.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(0, 0, 0));
         jLabel48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel48);
 
+        jLabel49.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(0, 0, 0));
         jLabel49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel49);
 
+        jLabel50.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(0, 0, 0));
         jLabel50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel50);
 
+        jLabel51.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(0, 0, 0));
         jLabel51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel51);
 
+        jLabel52.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel52.setForeground(new java.awt.Color(0, 0, 0));
         jLabel52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel52);
 
+        jLabel53.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(0, 0, 0));
         jLabel53.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel53);
 
+        jLabel54.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(0, 0, 0));
         jLabel54.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel54);
 
-        jButton2.setBackground(new java.awt.Color(156, 175, 170));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 255, 299, 140));
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 22)); // NOI18N
         jButton2.setText("Choose Number");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, 210, 33));
 
-        jTextField3.setBackground(new java.awt.Color(156, 175, 170));
+        jTextField3.setBackground(new java.awt.Color(198, 235, 197));
+        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
+        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 230, 183, 33));
 
         jLabel55.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel55.setText("Player 1:");
+        jPanel3.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 19, -1, -1));
 
         jLabel56.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel56.setText("Player 2:");
+        jPanel3.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 218, -1, -1));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(156, 175, 170));
+        jTextField1.setBackground(new java.awt.Color(198, 235, 197));
+        jTextField1.setFont(new java.awt.Font("Segoe UI Emoji", 2, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 59, 181, 40));
 
-        jTextField2.setBackground(new java.awt.Color(156, 175, 170));
+        jTextField2.setBackground(new java.awt.Color(198, 235, 197));
+        jTextField2.setFont(new java.awt.Font("Segoe UI Emoji", 2, 14)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, 195, 40));
 
         jLabel57.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel57.setText("Player 2 Status:");
+        jPanel3.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, -1, -1));
 
         jLabel58.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel58.setText("Player 1 Status:");
+        jPanel3.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(471, 28, -1, -1));
+        jPanel3.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(866, 58, 210, 110));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel55)
-                                    .addComponent(jLabel56))
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(321, 321, 321)
-                                        .addComponent(jLabel57)
-                                        .addGap(0, 0, Short.MAX_VALUE))))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(89, 89, 89)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addGap(471, 471, 471)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel58)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(271, 271, 271)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(38, 38, 38))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(101, 101, 101)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(692, Short.MAX_VALUE)))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel58)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel57)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel55)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
-                .addComponent(jLabel56)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(51, 51, 51)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(208, Short.MAX_VALUE)))
-        );
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jButton1.setText("START AGAIN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(885, 357, 183, 38));
+
+        jButton3.setBackground(new java.awt.Color(255, 255, 255));
+        jButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 22)); // NOI18N
+        jButton3.setText("EXIT");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(885, 307, 166, 38));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1097, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
         );
 
         pack();
@@ -475,18 +520,27 @@ public class Game<T> extends javax.swing.JFrame {
 
         int randomNumber = generator.generateRandomNumber();
         jTextField3.setText(randomNumber + " ");
-
-        check(player1.card, randomNumber, player1);
-        check(player2.card, randomNumber, player2);
+       
+        check(Start.player1.card, randomNumber, Start.player1);
+        check(Start.player2.card, randomNumber, Start.player2);
 
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Start newstart = new Start();
+        this.dispose();
+        newstart.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
     void generateforplayer2() {
         bıngoMethods<Integer> generator = new bıngoMethods<>();
-        Player player2 = new Player();
 
         card2 = generator.generateCard();
-        player2.card = generator.arrayToMultiLinkedList(card2);
+        Start.player2.card = generator.arrayToMultiLinkedList(card2);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
@@ -494,16 +548,36 @@ public class Game<T> extends javax.swing.JFrame {
                     labels2[i][j].setText(card2[i][j] + " ");
 
                 } else {
-                    labels2[i][j].setBackground(Color.BLACK);
-                    labels2[i][j].setForeground(Color.WHITE);
+                    Color customcolor = new Color(54, 84, 134);
+                    labels2[i][j].setBackground(customcolor);
 
-                    labels2[i][j].setText(" X ");
                     labels2[i][j].setOpaque(true);
 
                 }
             }
         }
 
+    }
+
+    void generateforplayer1() {
+        bıngoMethods<Integer> generator = new bıngoMethods<>();
+
+        card1 = generator.generateCard();
+        Start.player1.card = generator.arrayToMultiLinkedList(card1);
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (card1[i][j] != -1) {
+                    labels[i][j].setText(card1[i][j] + " ");
+
+                } else {
+                    Color customColor = new Color(255, 201, 74);
+                    labels[i][j].setBackground(customColor);
+                    labels[i][j].setOpaque(true); // Opaklığı etkinleştir
+
+                }
+            }
+        }
     }
 
     void check(Node head, int number, Player player) {
@@ -533,22 +607,23 @@ public class Game<T> extends javax.swing.JFrame {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
                 if (labels[i][j].getText().trim().equals(Integer.toString(number))) {
-                    labels[i][j].setBackground(Color.RED);
-                    labels[i][j].setOpaque(true); // Opaklığı etkinleştir
+                    labels[i][j].setIcon(scaledblockedIcon);
+
                 }
                 if (labels2[i][j].getText().trim().equals(Integer.toString(number))) {
-                    labels2[i][j].setBackground(Color.RED);
-                    labels2[i][j].setOpaque(true); // Opaklığı etkinleştir
+                    labels2[i][j].setIcon(scaledblockedIcon);
+
                 }
             }
         }
     }
+    private boolean bingoOccurred = false;
 
     void checkRow(Node head, Player player) {
-        int count = 0; // Satırdaki işaretlenmiş düğüm sayısını tutmak için bir sayaç
         int cinkoCount = 0; // Çinko sayısını tutmak için bir sayaç
 
         while (head != null) {
+            int count = 0; // Satırdaki işaretlenmiş düğüm sayısını tutmak için bir sayaç
             Node temp = head;
 
             while (temp != null) {
@@ -558,21 +633,22 @@ public class Game<T> extends javax.swing.JFrame {
 
                 if (count == 5) {
                     cinkoCount++;
-
-                    if (cinkoCount == 3) {
-                        int option = JOptionPane.showConfirmDialog(this, "Bingo!" + player.name + " " + player.surname + " Yeniden oynamak ister misiniz?", "Yeniden Oyna", JOptionPane.YES_NO_OPTION);
+                    if (cinkoCount == 3 && !bingoOccurred) {
+                        bingoOccurred = true; // Bingo gerçekleştiğini işaretle
+                        int option = JOptionPane.showConfirmDialog(this, "Bingo!" + player.name + " Yeniden oynamak ister misiniz?", "Yeniden Oyna", JOptionPane.YES_NO_OPTION);
                         if (option == JOptionPane.YES_OPTION) {
                             Start newstart = new Start();
+                            this.dispose();
+                            newstart.setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(this, "Come Again");
                             System.exit(0);
-
                         }
                     } else {
-                        if (player == player1) {
-                            jTextField1.setText(cinkoCount + " Çinko ");
-                        } else if (player == player2) {
-                            jTextField2.setText(cinkoCount + " Çinko ");
+                        if (player == Start.player1) {
+                            jTextField1.setText(cinkoCount + ".  Çinko ");
+                        } else if (player == Start.player2) {
+                            jTextField2.setText(cinkoCount + ".  Çinko ");
                         }
                     }
                 }
@@ -581,30 +657,6 @@ public class Game<T> extends javax.swing.JFrame {
             }
 
             head = head.down; // Bir sonraki satıra geç
-            count = 0; // Her satırı kontrol ettikten sonra count'u sıfırla
-        }
-    }
-
-    void generateforplayer1() {
-        bıngoMethods<Integer> generator = new bıngoMethods<>();
-        Player player1 = new Player();
-
-        card1 = generator.generateCard();
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (card1[i][j] != -1) {
-                    labels[i][j].setText(card1[i][j] + " ");
-
-                } else {
-                    labels[i][j].setBackground(Color.BLACK);
-                    labels[i][j].setForeground(Color.WHITE);
-                    labels[i][j].setOpaque(true); // Opaklığı etkinleştir
-
-                    labels[i][j].setText(" X ");
-
-                }
-            }
         }
     }
 
@@ -639,12 +691,15 @@ public class Game<T> extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Game().setVisible(true);
+
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -699,6 +754,7 @@ public class Game<T> extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

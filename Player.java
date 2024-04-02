@@ -9,6 +9,6 @@ package com.mycompany.tombala;
  * @author sozcu
  */
 public class Player {
-    String name,surname;
+    String name;
   Node<Integer> card;    
 }
