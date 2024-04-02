@@ -8,7 +8,7 @@ package com.mycompany.tombala;
  *
  * @author sozcu
  */
-public class Player {
+public class AsudeSozcuPlayerClass {
     String name;
-  Node<Integer> card;    
+  AsudeSozcuNodeClass card;    
 }

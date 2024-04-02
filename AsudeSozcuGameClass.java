@@ -16,12 +16,12 @@ import javax.swing.JOptionPane;
  *
  * @author sozcu
  */
-public class Game<T> extends javax.swing.JFrame {
+public class AsudeSozcuGameClass<T> extends javax.swing.JFrame {
 
     /**
      * Creates new form Game
      */
-    public Game() {
+    public AsudeSozcuGameClass() {
         initComponents();
 
         ImageIcon icon = new ImageIcon("C:\\Users\\sozcu\\Downloads\\bingo.png");
@@ -32,22 +32,22 @@ public class Game<T> extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
         jLabel59.setIcon(scaledIcon);
-        Start.labels = new JLabel[][]{{jLabel1, jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9}, {jLabel10, jLabel11, jLabel12, jLabel13, jLabel14, jLabel15, jLabel16, jLabel17, jLabel18}, {jLabel19, jLabel20, jLabel21, jLabel22, jLabel23, jLabel24, jLabel25, jLabel26, jLabel27}};
+        AsudeSozcuStartClass.labels = new JLabel[][]{{jLabel1, jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9}, {jLabel10, jLabel11, jLabel12, jLabel13, jLabel14, jLabel15, jLabel16, jLabel17, jLabel18}, {jLabel19, jLabel20, jLabel21, jLabel22, jLabel23, jLabel24, jLabel25, jLabel26, jLabel27}};
 
-         Start.labels2 = new JLabel[][]{{jLabel28, jLabel29, jLabel30, jLabel31, jLabel32, jLabel33, jLabel34, jLabel35, jLabel36}, {jLabel37, jLabel38, jLabel39, jLabel40, jLabel41, jLabel42, jLabel43, jLabel44, jLabel45}, {jLabel46, jLabel47, jLabel48, jLabel49, jLabel50, jLabel51, jLabel52, jLabel53, jLabel54}};
+         AsudeSozcuStartClass.labels2 = new JLabel[][]{{jLabel28, jLabel29, jLabel30, jLabel31, jLabel32, jLabel33, jLabel34, jLabel35, jLabel36}, {jLabel37, jLabel38, jLabel39, jLabel40, jLabel41, jLabel42, jLabel43, jLabel44, jLabel45}, {jLabel46, jLabel47, jLabel48, jLabel49, jLabel50, jLabel51, jLabel52, jLabel53, jLabel54}};
        
 
-        jLabel57.setText(Start.player2.name + " Status");
-        jLabel58.setText(Start.player1.name + " Status");
+        jLabel57.setText(AsudeSozcuStartClass.player2.name + " Status");
+        jLabel58.setText(AsudeSozcuStartClass.player1.name + " Status");
 
     }
 
     ImageIcon block = new ImageIcon("C:\\Users\\sozcu\\Downloads\\new-moon.png");
     Image blockImage = block.getImage();
     Image scaledblock = blockImage.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
-
-    ImageIcon scaledblockedIcon = new ImageIcon(scaledblock);
-
+ImageIcon scaledblockedIcon = new ImageIcon(scaledblock);
+  
+AsudeSozcuBıngoMethodsClass generator = new AsudeSozcuBıngoMethodsClass();
  
 
     /**
@@ -504,21 +504,21 @@ public class Game<T> extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
-    bıngoMethods generator = new bıngoMethods();
+  
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         int randomNumber = generator.generateRandomNumber();
         jTextField3.setText(randomNumber + " ");
 
-        check(Start.player1.card, randomNumber, Start.player1);
-        check(Start.player2.card, randomNumber, Start.player2);
+        check(AsudeSozcuStartClass.player1.card, randomNumber, AsudeSozcuStartClass.player1);
+        check(AsudeSozcuStartClass.player2.card, randomNumber, AsudeSozcuStartClass.player2);
 
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Start newstart = new Start();
+        AsudeSozcuStartClass newstart = new AsudeSozcuStartClass();
         this.dispose();
         newstart.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -527,21 +527,21 @@ public class Game<T> extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
     void generateforplayer2() {
-        bıngoMethods<Integer> generator = new bıngoMethods<>();
+        AsudeSozcuBıngoMethodsClass generator = new AsudeSozcuBıngoMethodsClass();
 
-        Start.card2 = generator.generateCard();
-        Start.player2.card = generator.arrayToMultiLinkedList(  Start.card2);
+        AsudeSozcuStartClass.card2 = generator.generateCard();
+        AsudeSozcuStartClass.player2.card = generator.arrayToMultiLinkedList(  AsudeSozcuStartClass.card2);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                if (  Start.card2[i][j] != -1) {
-                      Start.labels2[i][j].setText(  Start.card2[i][j] + " ");
+                if (  AsudeSozcuStartClass.card2[i][j] != -1) {
+                      AsudeSozcuStartClass.labels2[i][j].setText(  AsudeSozcuStartClass.card2[i][j] + " ");
 
                 } else {
                     Color customcolor = new Color(54, 84, 134);
-                      Start.labels2[i][j].setBackground(customcolor);
+                      AsudeSozcuStartClass.labels2[i][j].setBackground(customcolor);
 
-                      Start.labels2[i][j].setOpaque(true);
+                      AsudeSozcuStartClass.labels2[i][j].setOpaque(true);
 
                 }
             }
@@ -550,35 +550,35 @@ public class Game<T> extends javax.swing.JFrame {
     }
 
     void generateforplayer1() {
-        bıngoMethods<Integer> generator = new bıngoMethods<>();
+        AsudeSozcuBıngoMethodsClass generator = new AsudeSozcuBıngoMethodsClass();
 
-          Start.card1 = generator.generateCard();
-        Start.player1.card = generator.arrayToMultiLinkedList(  Start.card1);
+          AsudeSozcuStartClass.card1 = generator.generateCard();
+        AsudeSozcuStartClass.player1.card = generator.arrayToMultiLinkedList(  AsudeSozcuStartClass.card1);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                if (  Start.card1[i][j] != -1) {
-                      Start.labels[i][j].setText(  Start.card1[i][j] + " ");
+                if (  AsudeSozcuStartClass.card1[i][j] != -1) {
+                      AsudeSozcuStartClass.labels[i][j].setText(  AsudeSozcuStartClass.card1[i][j] + " ");
 
                 } else {
                     Color customColor = new Color(255, 201, 74);
-                      Start.labels[i][j].setBackground(customColor);
-                      Start.labels[i][j].setOpaque(true); // Opaklığı etkinleştir
+                      AsudeSozcuStartClass.labels[i][j].setBackground(customColor);
+                      AsudeSozcuStartClass.labels[i][j].setOpaque(true);
 
                 }
             }
         }
     }
 
-    void check(Node head, int number, Player player) {
-        Node current = head;
-        boolean cinkoDialogShown = false; // Çinko dialogunun gösterilip gösterilmediğini belirlemek için bayrak
+    void check(AsudeSozcuNodeClass head, int number, AsudeSozcuPlayerClass player) {
+        AsudeSozcuNodeClass current = head;
+        boolean cinkoDialogShown = false; 
 
-        // Satırları dolaş
+     
         while (current != null) {
-            Node temp = current;
+            AsudeSozcuNodeClass temp = current;
 
-            // Sütunları dolaş
+            
             while (temp != null) {
                 if (temp.data == number) {
                     temp.isFound = true;
@@ -587,7 +587,7 @@ public class Game<T> extends javax.swing.JFrame {
                 temp = temp.down;
             }
 
-            // Bir sonraki satıra geç
+           
             current = current.next;
             checkRow(head, player);
         }
@@ -596,12 +596,12 @@ public class Game<T> extends javax.swing.JFrame {
     void changelabel(int number) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                if (  Start.labels[i][j].getText().trim().equals(Integer.toString(number))) {
-                      Start.labels[i][j].setIcon(scaledblockedIcon);
+                if (  AsudeSozcuStartClass.labels[i][j].getText().trim().equals(Integer.toString(number))) {
+                      AsudeSozcuStartClass.labels[i][j].setIcon(scaledblockedIcon);
 
                 }
-                if (  Start.labels2[i][j].getText().trim().equals(Integer.toString(number))) {
-                      Start.labels2[i][j].setIcon(scaledblockedIcon);
+                if (  AsudeSozcuStartClass.labels2[i][j].getText().trim().equals(Integer.toString(number))) {
+                      AsudeSozcuStartClass.labels2[i][j].setIcon(scaledblockedIcon);
 
                 }
             }
@@ -609,25 +609,25 @@ public class Game<T> extends javax.swing.JFrame {
     }
     private boolean bingoOccurred = false;
 
-    void checkRow(Node head, Player player) {
-        int cinkoCount = 0; // Çinko sayısını tutmak için bir sayaç
+    void checkRow(AsudeSozcuNodeClass head, AsudeSozcuPlayerClass player) {
+        int cinkoCount = 0; 
 
         while (head != null) {
-            int count = 0; // Satırdaki işaretlenmiş düğüm sayısını tutmak için bir sayaç
-            Node temp = head;
+            int count = 0; 
+            AsudeSozcuNodeClass temp = head;
 
             while (temp != null) {
                 if (temp.isFound) {
-                    count++; // İşaretlenmiş düğüm varsa sayacı artır
+                    count++; 
                 }
 
                 if (count == 5) {
                     cinkoCount++;
                     if (cinkoCount == 3 && !bingoOccurred) {
-                        bingoOccurred = true; // Bingo gerçekleştiğini işaretle
-                        int option = JOptionPane.showConfirmDialog(this, "Bingo!" + player.name + " Yeniden oynamak ister misiniz?", "Yeniden Oyna", JOptionPane.YES_NO_OPTION);
+                        bingoOccurred = true; 
+                        int option = JOptionPane.showConfirmDialog(this, "Bingo!" + player.name +"WON!! "+" Do you want to play again?", "Yeniden Oyna", JOptionPane.YES_NO_OPTION);
                         if (option == JOptionPane.YES_OPTION) {
-                            Start newstart = new Start();
+                            AsudeSozcuStartClass newstart = new AsudeSozcuStartClass();
                             this.dispose();
                             newstart.setVisible(true);
                         } else {
@@ -635,18 +635,18 @@ public class Game<T> extends javax.swing.JFrame {
                             System.exit(0);
                         }
                     } else {
-                        if (player == Start.player1) {
+                        if (player == AsudeSozcuStartClass.player1) {
                             jTextField1.setText(cinkoCount + ".  Çinko ");
-                        } else if (player == Start.player2) {
+                        } else if (player == AsudeSozcuStartClass.player2) {
                             jTextField2.setText(cinkoCount + ".  Çinko ");
                         }
                     }
                 }
 
-                temp = temp.next; // Aynı satırda bir sonraki elemana geç
+                temp = temp.next;  
             }
 
-            head = head.down; // Bir sonraki satıra geç
+            head = head.down; 
         }
     }
 
@@ -667,20 +667,21 @@ public class Game<T> extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuGameClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuGameClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuGameClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Game.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuGameClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Game().setVisible(true);
+                new AsudeSozcuGameClass().setVisible(true);
 
             }
         });

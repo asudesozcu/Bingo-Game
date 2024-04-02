@@ -8,25 +8,25 @@ package com.mycompany.tombala;
  *
  * @author sozcu
  */
-public class Node<T> {
+public class AsudeSozcuNodeClass {
 
     int data;
-    Node<T> next;
-    Node<T> down;
+    AsudeSozcuNodeClass next;
+    AsudeSozcuNodeClass  down;
     boolean isFound=false;
 
-    public Node(int data) {
+    public AsudeSozcuNodeClass(int data) {
         this.data = data;
 
     }
 
-    public Node(int data, Node<T> next,  Node<T> down) {
+    public AsudeSozcuNodeClass(int data, AsudeSozcuNodeClass next,  AsudeSozcuNodeClass down) {
         this.data = data;
         this.next = next;
         this.down = down;
     }
 
-    Node() {
+    AsudeSozcuNodeClass() {
     }
 
     

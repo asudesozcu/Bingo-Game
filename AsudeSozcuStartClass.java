@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author sozcu
  */
-public class Start extends javax.swing.JFrame {
+public class AsudeSozcuStartClass extends javax.swing.JFrame {
 
     /**
      * Creates new form Start
      */
-    public Start() {
+    public AsudeSozcuStartClass() {
         initComponents();
     }
 
@@ -144,8 +144,8 @@ public class Start extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    static Player player1 = new Player();
-    static Player player2 = new Player();
+    static AsudeSozcuPlayerClass player1 = new AsudeSozcuPlayerClass();
+    static AsudeSozcuPlayerClass player2 = new AsudeSozcuPlayerClass();
     static JLabel[][] labels;
     static JLabel[][] labels2;
 
@@ -159,7 +159,7 @@ public class Start extends javax.swing.JFrame {
             number = Integer.parseInt(input);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Invalid input! Please enter a valid integer.");
-            number = getNumber(message); // Recursive call until valid input is provided
+            number = getNumber(message); 
         }
         return number;
     }
@@ -187,10 +187,10 @@ public class Start extends javax.swing.JFrame {
         card2 = array2;
         player1.name = PLAYER1.getText();
         player2.name = plAYER2.getText();
-        Game newgame = new Game();
-        bıngoMethods generator = new bıngoMethods();
+        AsudeSozcuGameClass newgame = new AsudeSozcuGameClass();
+        AsudeSozcuBıngoMethodsClass generator = new AsudeSozcuBıngoMethodsClass();
 
-        Start.player1.card = generator.arrayToMultiLinkedList(array);
+        AsudeSozcuStartClass.player1.card = generator.arrayToMultiLinkedList(array);
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
                 if (card1[i][j] != -1) {
@@ -204,7 +204,7 @@ public class Start extends javax.swing.JFrame {
                 }
             }
         }
-        Start.player2.card = generator.arrayToMultiLinkedList(array2);
+        AsudeSozcuStartClass.player2.card = generator.arrayToMultiLinkedList(array2);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
@@ -229,8 +229,8 @@ public class Start extends javax.swing.JFrame {
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         player1.name = PLAYER1.getText();
         player2.name = plAYER2.getText();
-        Game newgame = new Game();
-        bıngoMethods generator = new bıngoMethods();
+        AsudeSozcuGameClass newgame = new AsudeSozcuGameClass();
+        AsudeSozcuBıngoMethodsClass generator = new AsudeSozcuBıngoMethodsClass();
         newgame.generateforplayer1();
         newgame.generateforplayer2();
 
@@ -258,20 +258,21 @@ public class Start extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuStartClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuStartClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuStartClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsudeSozcuStartClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Start().setVisible(true);
+                new AsudeSozcuStartClass().setVisible(true);
             }
         });
     }
