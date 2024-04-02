@@ -4,8 +4,8 @@
  */
 package com.mycompany.tombala;
 
-import static com.mycompany.tombala.Game.card1;
-import static com.mycompany.tombala.Game.card2;
+import java.awt.Color;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,7 +32,6 @@ public class Start extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         arrayLogın = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         plAYER2 = new javax.swing.JTextField();
@@ -42,26 +41,12 @@ public class Start extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBackground(new java.awt.Color(183, 123, 97));
+        jPanel3.setBackground(new java.awt.Color(51, 153, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(32770, 32767));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 35)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(250, 216, 142));
         jLabel1.setText("                  BINGO GAME");
-
-        jPanel2.setBackground(new java.awt.Color(250, 216, 142));
-        jPanel2.setPreferredSize(new java.awt.Dimension(391, 3));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 5, Short.MAX_VALUE)
-        );
 
         arrayLogın.setBackground(new java.awt.Color(231, 198, 125));
         arrayLogın.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
@@ -74,7 +59,7 @@ public class Start extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(183, 123, 97));
+        jTextField1.setBackground(new java.awt.Color(51, 153, 255));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTextField1.setText("PLAYER 1 NAME:");
 
@@ -100,18 +85,6 @@ public class Start extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 22, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(arrayLogın, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -122,20 +95,24 @@ public class Start extends javax.swing.JFrame {
                     .addComponent(plAYER2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PLAYER1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                    .addContainerGap(314, Short.MAX_VALUE)
-                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(arrayLogın, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(57, 57, 57)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PLAYER1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -143,14 +120,11 @@ public class Start extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(plAYER2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(42, 42, 42)
-                .addComponent(arrayLogın, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                    .addContainerGap(273, Short.MAX_VALUE)
-                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(arrayLogın, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,8 +146,83 @@ public class Start extends javax.swing.JFrame {
 
     static Player player1 = new Player();
     static Player player2 = new Player();
+    static JLabel[][] labels;
+    static JLabel[][] labels2;
+
+    public static int[][] card1;
+    public static int[][] card2;
+
+    public static int getNumber(String message) {
+        String input = JOptionPane.showInputDialog(null, message);
+        int number = 0;
+        try {
+            number = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Invalid input! Please enter a valid integer.");
+            number = getNumber(message); // Recursive call until valid input is provided
+        }
+        return number;
+    }
 
     private void arrayLogınActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrayLogınActionPerformed
+        int[][] array = new int[3][9];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
+                array[i][j] = getNumber("Enter the value for position [" + i + "][" + j + "]:");
+
+            }
+        }
+
+        int[][] array2 = new int[3][9];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
+                array2[i][j] = getNumber("Enter the value for position [" + i + "][" + j + "]:");
+
+            }
+        }
+
+        card1 = array;
+        card2 = array2;
+        player1.name = PLAYER1.getText();
+        player2.name = plAYER2.getText();
+        Game newgame = new Game();
+        bıngoMethods generator = new bıngoMethods();
+
+        Start.player1.card = generator.arrayToMultiLinkedList(array);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (card1[i][j] != -1) {
+                    labels[i][j].setText(card1[i][j] + " ");
+
+                } else {
+                    Color customColor = new Color(255, 201, 74);
+                    labels[i][j].setBackground(customColor);
+                    labels[i][j].setOpaque(true);
+
+                }
+            }
+        }
+        Start.player2.card = generator.arrayToMultiLinkedList(array2);
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (card2[i][j] != -1) {
+                    labels2[i][j].setText(card2[i][j] + " ");
+
+                } else {
+                    Color customcolor = new Color(54, 84, 134);
+                    labels2[i][j].setBackground(customcolor);
+
+                    labels2[i][j].setOpaque(true);
+
+                }
+            }
+        }
+        this.dispose();
+        newgame.setVisible(true);
+
 
     }//GEN-LAST:event_arrayLogınActionPerformed
 
@@ -181,7 +230,13 @@ public class Start extends javax.swing.JFrame {
         player1.name = PLAYER1.getText();
         player2.name = plAYER2.getText();
         Game newgame = new Game();
-this.dispose();
+        bıngoMethods generator = new bıngoMethods();
+        newgame.generateforplayer1();
+        newgame.generateforplayer2();
+
+        generator.arrayToMultiLinkedList(card1);
+        generator.arrayToMultiLinkedList(card2);
+        this.dispose();
         newgame.setVisible(true);
 
     }//GEN-LAST:event_startActionPerformed
@@ -226,7 +281,6 @@ this.dispose();
     private javax.swing.JButton arrayLogın;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField plAYER2;

@@ -32,17 +32,11 @@ public class Game<T> extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
 
         jLabel59.setIcon(scaledIcon);
-        labels = new JLabel[][]{{jLabel1, jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9}, {jLabel10, jLabel11, jLabel12, jLabel13, jLabel14, jLabel15, jLabel16, jLabel17, jLabel18}, {jLabel19, jLabel20, jLabel21, jLabel22, jLabel23, jLabel24, jLabel25, jLabel26, jLabel27}};
+        Start.labels = new JLabel[][]{{jLabel1, jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8, jLabel9}, {jLabel10, jLabel11, jLabel12, jLabel13, jLabel14, jLabel15, jLabel16, jLabel17, jLabel18}, {jLabel19, jLabel20, jLabel21, jLabel22, jLabel23, jLabel24, jLabel25, jLabel26, jLabel27}};
 
-        labels2 = new JLabel[][]{{jLabel28, jLabel29, jLabel30, jLabel31, jLabel32, jLabel33, jLabel34, jLabel35, jLabel36}, {jLabel37, jLabel38, jLabel39, jLabel40, jLabel41, jLabel42, jLabel43, jLabel44, jLabel45}, {jLabel46, jLabel47, jLabel48, jLabel49, jLabel50, jLabel51, jLabel52, jLabel53, jLabel54}};
-        generateforplayer1();
-        generateforplayer2();
-        
+         Start.labels2 = new JLabel[][]{{jLabel28, jLabel29, jLabel30, jLabel31, jLabel32, jLabel33, jLabel34, jLabel35, jLabel36}, {jLabel37, jLabel38, jLabel39, jLabel40, jLabel41, jLabel42, jLabel43, jLabel44, jLabel45}, {jLabel46, jLabel47, jLabel48, jLabel49, jLabel50, jLabel51, jLabel52, jLabel53, jLabel54}};
        
-        generator.arrayToMultiLinkedList(card1);
-        generator.arrayToMultiLinkedList(card2);
-        
-       
+
         jLabel57.setText(Start.player2.name + " Status");
         jLabel58.setText(Start.player1.name + " Status");
 
@@ -54,11 +48,7 @@ public class Game<T> extends javax.swing.JFrame {
 
     ImageIcon scaledblockedIcon = new ImageIcon(scaledblock);
 
-    JLabel[][] labels;
-    JLabel[][] labels2;
-
-    static int[][] card1;
-    static int[][] card2;
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -520,7 +510,7 @@ public class Game<T> extends javax.swing.JFrame {
 
         int randomNumber = generator.generateRandomNumber();
         jTextField3.setText(randomNumber + " ");
-       
+
         check(Start.player1.card, randomNumber, Start.player1);
         check(Start.player2.card, randomNumber, Start.player2);
 
@@ -539,19 +529,19 @@ public class Game<T> extends javax.swing.JFrame {
     void generateforplayer2() {
         bıngoMethods<Integer> generator = new bıngoMethods<>();
 
-        card2 = generator.generateCard();
-        Start.player2.card = generator.arrayToMultiLinkedList(card2);
+        Start.card2 = generator.generateCard();
+        Start.player2.card = generator.arrayToMultiLinkedList(  Start.card2);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                if (card2[i][j] != -1) {
-                    labels2[i][j].setText(card2[i][j] + " ");
+                if (  Start.card2[i][j] != -1) {
+                      Start.labels2[i][j].setText(  Start.card2[i][j] + " ");
 
                 } else {
                     Color customcolor = new Color(54, 84, 134);
-                    labels2[i][j].setBackground(customcolor);
+                      Start.labels2[i][j].setBackground(customcolor);
 
-                    labels2[i][j].setOpaque(true);
+                      Start.labels2[i][j].setOpaque(true);
 
                 }
             }
@@ -562,18 +552,18 @@ public class Game<T> extends javax.swing.JFrame {
     void generateforplayer1() {
         bıngoMethods<Integer> generator = new bıngoMethods<>();
 
-        card1 = generator.generateCard();
-        Start.player1.card = generator.arrayToMultiLinkedList(card1);
+          Start.card1 = generator.generateCard();
+        Start.player1.card = generator.arrayToMultiLinkedList(  Start.card1);
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                if (card1[i][j] != -1) {
-                    labels[i][j].setText(card1[i][j] + " ");
+                if (  Start.card1[i][j] != -1) {
+                      Start.labels[i][j].setText(  Start.card1[i][j] + " ");
 
                 } else {
                     Color customColor = new Color(255, 201, 74);
-                    labels[i][j].setBackground(customColor);
-                    labels[i][j].setOpaque(true); // Opaklığı etkinleştir
+                      Start.labels[i][j].setBackground(customColor);
+                      Start.labels[i][j].setOpaque(true); // Opaklığı etkinleştir
 
                 }
             }
@@ -606,12 +596,12 @@ public class Game<T> extends javax.swing.JFrame {
     void changelabel(int number) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
-                if (labels[i][j].getText().trim().equals(Integer.toString(number))) {
-                    labels[i][j].setIcon(scaledblockedIcon);
+                if (  Start.labels[i][j].getText().trim().equals(Integer.toString(number))) {
+                      Start.labels[i][j].setIcon(scaledblockedIcon);
 
                 }
-                if (labels2[i][j].getText().trim().equals(Integer.toString(number))) {
-                    labels2[i][j].setIcon(scaledblockedIcon);
+                if (  Start.labels2[i][j].getText().trim().equals(Integer.toString(number))) {
+                      Start.labels2[i][j].setIcon(scaledblockedIcon);
 
                 }
             }
